@@ -29,19 +29,11 @@ const MainStack: React.FC<any> = () => {
         component={BottomTabFinal}
         options={{headerShown: false, gestureEnabled: false}}
       />
-      <Stack.Screen
-        name={routes.Notifications}
-        component={Notifications}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen name={routes.Login} component={Login} options={{headerShown: false}} />
-      <Stack.Screen name={routes.Gift} component={Gift} options={{headerShown: false}} />
-      <Stack.Screen name={routes.Home} component={Home} options={{headerShown: false}} />
-      <Stack.Screen
-        name={routes.UserProfile}
-        component={UserProfile}
-        options={{headerShown: false}}
-      />
+      <Stack.Screen name={routes.Notifications} component={Notifications} />
+      <Stack.Screen name={routes.Login} component={Login} />
+      <Stack.Screen name={routes.Gift} component={Gift} />
+      <Stack.Screen name={routes.Home} component={Home} />
+      <Stack.Screen name={routes.UserProfile} component={UserProfile} />
     </Stack.Navigator>
   )
 }
