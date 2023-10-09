@@ -1,7 +1,7 @@
 import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {MainStackScreenNavigationProps} from '../../navigation/types';
-import {routes} from '../../navigation/routes';
+import type {MainStackScreenNavigationProps} from 'src/navigation/types';
+import {routes} from 'src/navigation/routes';
 
 interface Login extends MainStackScreenNavigationProps<'Login'> {}
 
