@@ -1,10 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
-import type {BottomTabBarProps} from '@react-navigation/bottom-tabs';
-import React from 'react';
-import Tab from './Tab';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import type {BottomTabBarProps} from '@react-navigation/bottom-tabs'
+import React from 'react'
+import Tab from './Tab'
+import {SafeAreaView, StyleSheet, View} from 'react-native'
 
-export const BOTTOMTAB_HEIGHT = 115;
+export const BOTTOMTAB_HEIGHT = 115
 
 const CustomTabbar = ({state, descriptors, navigation}: BottomTabBarProps) => {
   return (
@@ -36,10 +36,10 @@ const CustomTabbar = ({state, descriptors, navigation}: BottomTabBarProps) => {
       </View>
       {/* </View> */}
     </SafeAreaView>
-  );
-};
+  )
+}
 
-export default CustomTabbar;
+export default CustomTabbar
 
 const styles = StyleSheet.create({
   container: {
@@ -70,4 +70,4 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 3,
   },
-});
+})

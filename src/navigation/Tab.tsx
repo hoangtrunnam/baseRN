@@ -1,6 +1,6 @@
-import React, {memo} from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {routes} from './routes';
+import React, {memo} from 'react'
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import {routes} from './routes'
 
 const Tab = ({
   isFocused,
@@ -8,45 +8,45 @@ const Tab = ({
   options,
   navigation,
 }: {
-  isFocused: boolean;
-  route: any;
-  options: any;
-  navigation: any;
+  isFocused: boolean
+  route: any
+  options: any
+  navigation: any
 }) => {
-  const label = route.name || '';
+  const label = route.name || ''
 
   const renderIcon = () => {
     if (label === routes.Home) {
-      return <Text>img1</Text>;
+      return <Text>img1</Text>
     }
     if (label === routes.Gift) {
-      return <Text>img1</Text>;
+      return <Text>img1</Text>
     }
     if (label === routes.Notifications) {
-      return <Text>img1</Text>;
+      return <Text>img1</Text>
     }
     if (label === routes.UserProfile) {
-      return <Text>img1</Text>;
+      return <Text>img1</Text>
     }
 
-    return false;
-  };
+    return false
+  }
   const onPress = () => {
     const event = navigation.emit({
       type: 'tabPress',
       target: route.key,
-    });
+    })
     if (!isFocused && !event.defaultPrevented) {
-      navigation.navigate(route.name);
+      navigation.navigate(route.name)
     }
-  };
+  }
 
   const onLongPress = () => {
     navigation.emit({
       type: 'tabLongPress',
       target: route.key,
-    });
-  };
+    })
+  }
 
   return (
     <>
@@ -64,8 +64,8 @@ const Tab = ({
         </TouchableOpacity>
       )}
     </>
-  );
-};
+  )
+}
 const styles = StyleSheet.create({
   tab: {
     flex: 1,
@@ -75,6 +75,6 @@ const styles = StyleSheet.create({
   tabHome: {
     marginTop: -30,
   },
-});
+})
 
-export default memo(Tab);
+export default memo(Tab)

@@ -1,12 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
-import {Text, View} from 'react-native';
+import React from 'react'
+import {Text, View} from 'react-native'
 const toastStatus = {
   success: {
     icon: <Text>oki</Text>,
     backgroundColor: 'green',
   },
-};
+}
 
 interface ToastProps {
   status:
@@ -17,13 +17,13 @@ interface ToastProps {
     | 'cartSuccess'
     | 'favourite'
     | 'link'
-    | 'partnerCartSuccess';
-  title: any;
+    | 'partnerCartSuccess'
+  title: any
 }
 const ToastMessage = ({status = 'success', title}: ToastProps) => {
-  const {message} = title;
+  const {message} = title
   if (status !== 'success') {
-    return null;
+    return null
   }
 
   return (
@@ -44,7 +44,7 @@ const ToastMessage = ({status = 'success', title}: ToastProps) => {
         </View>
       </View>
     </View>
-  );
-};
+  )
+}
 
-export default ToastMessage;
+export default ToastMessage

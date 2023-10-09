@@ -1,8 +1,8 @@
-import type {RoutesType} from './types';
+import type {RoutesType} from './types'
 
 type Entries<T> = {
-  [K in keyof T]: K;
-};
+  [K in keyof T]: K
+}
 
 export const routes: Entries<RoutesType> = {
   Notifications: 'Notifications',
@@ -14,4 +14,4 @@ export const routes: Entries<RoutesType> = {
   Home: 'Home',
   Login: 'Login',
   UserProfile: 'UserProfile',
-};
+}

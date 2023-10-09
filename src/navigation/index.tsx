@@ -1,8 +1,8 @@
-import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import React from 'react'
+import {NavigationContainer} from '@react-navigation/native'
 // import { useFlipper } from '@react-navigation/devtools'
-import {refNavigation} from './navigationHelper';
-import MainStack from './MainStack';
+import {refNavigation} from './navigationHelper'
+import MainStack from './MainStack'
 
 const Navigator = () => {
   // @ts-ignore
@@ -12,7 +12,7 @@ const Navigator = () => {
     <NavigationContainer ref={refNavigation}>
       <MainStack />
     </NavigationContainer>
-  );
-};
+  )
+}
 
-export default Navigator;
+export default Navigator

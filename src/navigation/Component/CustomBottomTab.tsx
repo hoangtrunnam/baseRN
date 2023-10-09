@@ -1,30 +1,23 @@
 /* eslint-disable react-native/no-inline-styles */
-import type {BottomTabBarProps} from '@react-navigation/bottom-tabs';
-import React from 'react';
-import {
-  Dimensions,
-  Platform,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import {routes} from '../routes';
+import type {BottomTabBarProps} from '@react-navigation/bottom-tabs'
+import React from 'react'
+import {Dimensions, Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import {routes} from '../routes'
 
-const TAB_HEIGHT = Platform.OS === 'ios' ? 80 : 50;
+const TAB_HEIGHT = Platform.OS === 'ios' ? 80 : 50
 
 function TabShape() {
   return (
     <View>
-      <Text>imga</Text>;
+      <Text>imga</Text>
     </View>
-  );
+  )
 }
 const CustomBottomTab = ({navigation}: BottomTabBarProps) => {
   // const { isLoggedIn } = useAppSelector(selectAuth)
   const handleNavigate = (route: string) => {
-    navigation.navigate(routes.BottomTab, {screen: route});
-  };
+    navigation.navigate(routes.BottomTab, {screen: route})
+  }
 
   return (
     <View
@@ -61,8 +54,7 @@ const CustomBottomTab = ({navigation}: BottomTabBarProps) => {
               <Text>ok2</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => handleNavigate(routes.Notifications)}>
+          <TouchableOpacity onPress={() => handleNavigate(routes.Notifications)}>
             <Text>ok3</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => handleNavigate(routes.UserProfile)}>
@@ -73,6 +65,6 @@ const CustomBottomTab = ({navigation}: BottomTabBarProps) => {
         </View>
       </View>
     </View>
-  );
-};
-export default CustomBottomTab;
+  )
+}
+export default CustomBottomTab
