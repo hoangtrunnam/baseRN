@@ -3,13 +3,12 @@ import React from 'react'
 import {Platform} from 'react-native'
 import {routes} from './routes'
 import type {MainNavigationParamList} from './types'
-import Notifications from '../features/TestApp/Notifications'
-import Gift from '../features/TestApp/Gift'
-import Home from '../features/TestApp/Home'
-import UserProfile from '../features/TestApp/UserProfile'
+import Gift from 'src/features/TestApp/Gift'
+import Home from 'src/features/TestApp/Home'
+import Login from 'src/features/TestApp/Login'
+import Notifications from 'src/features/TestApp/Notifications'
+import UserProfile from 'src/features/TestApp/UserProfile'
 import BottomTabFinal from './BottomTabFinal'
-import Login from '../features/TestApp/Login'
-
 const Stack = createStackNavigator<MainNavigationParamList>()
 
 const MainStack: React.FC<any> = () => {
