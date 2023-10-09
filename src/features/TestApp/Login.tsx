@@ -4,9 +4,9 @@ import React from 'react'
 import type {MainStackScreenNavigationProps} from 'src/navigation/types'
 import {routes} from 'src/navigation/routes'
 
-interface Login extends MainStackScreenNavigationProps<'Login'> {}
+interface ILogin extends MainStackScreenNavigationProps<'Login'> {}
 
-const Login = ({navigation}: Login) => {
+const Login = ({navigation}: ILogin) => {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>Login</Text>
