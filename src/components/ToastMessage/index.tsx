@@ -6,23 +6,23 @@ const toastStatus = {
     icon: <Text>oki</Text>,
     backgroundColor: 'green',
   },
+  error: {
+    icon: <Text>oki</Text>,
+    backgroundColor: '#CE2B22',
+  },
+  warning: {
+    icon: <Text>oki</Text>,
+    backgroundColor: '#FF6E00',
+  },
 }
 
 interface ToastProps {
-  status:
-    | 'success'
-    | 'error'
-    | 'warning'
-    | 'setDefault'
-    | 'cartSuccess'
-    | 'favourite'
-    | 'link'
-    | 'partnerCartSuccess'
+  status: 'success' | 'error' | 'warning'
   title: any
 }
 const ToastMessage = ({status = 'success', title}: ToastProps) => {
   const {message} = title
-  if (status !== 'success') {
+  if (status !== 'success' && status !== 'error' && status !== 'warning') {
     return null
   }
 

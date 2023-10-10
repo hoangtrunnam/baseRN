@@ -9,6 +9,17 @@ import {SafeAreaProvider} from 'react-native-safe-area-context'
 import Navigator from './src/navigation'
 import ToastMessage from './src/components/ToastMessage/index'
 import store from 'src/redux/store'
+import LoadingPortal from 'src/components/Loading/LoadingPortal'
+
+/** khai báo và tạo thêm prototype translate cho string
+ * sử dụng cho i18n ở func common, func ngoài component
+ * component bình thường dùng hook useI18n bình thường
+ */
+declare global {
+  interface String {
+    trans(): string
+  }
+}
 
 function App(): JSX.Element {
   const toastConfig = {
@@ -19,6 +30,7 @@ function App(): JSX.Element {
       <Host>
         <SafeAreaProvider>
           <Navigator />
+          <LoadingPortal />
           <Toast config={toastConfig} visibilityTime={1500} />
         </SafeAreaProvider>
       </Host>

@@ -3,11 +3,11 @@ import React from 'react'
 import CustomTabbar from './CustomTabbar'
 import {routes} from './routes'
 import type {BottomTabNavigationParamList} from './types'
-import Home from '../features/TestApp/Home'
-import Gift from '../features/TestApp/Gift'
-import Notifications from '../features/TestApp/Notifications'
-import UserProfile from '../features/TestApp/UserProfile'
-import {useDisableBackRoute} from '../commons/hooks/useDisableBackRoute'
+import {useDisableBackRoute} from 'src/commons/hooks/useDisableBackRoute'
+import Gift from 'src/features/TestApp/Gift'
+import Home from 'src/features/TestApp/Home'
+import Notifications from 'src/features/TestApp/Notifications'
+import UserProfile from 'src/features/TestApp/UserProfile'
 
 const Tab = createBottomTabNavigator<BottomTabNavigationParamList>()
 
