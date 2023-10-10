@@ -1,5 +1,15 @@
 {
   "compilerOptions": {
+    "paths": {
+      "src/api/*": ["src/api/*"],
+      "src/assets/*": ["src/assets/*"],
+      "src/commons/*": ["src/commons/*"],
+      "src/components/*": ["src/components/*"],
+      "src/configs/*": ["src/configs/*"],
+      "src/features/*": ["src/features/*"],
+      "src/navigation/*": ["src/navigation/*"],
+      "src/redux/*": ["src/redux/*"],
+    },
     "baseUrl": ".",
     "outDir": "./lib/typescript",
     "composite": true,
