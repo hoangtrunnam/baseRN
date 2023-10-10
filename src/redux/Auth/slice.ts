@@ -10,7 +10,7 @@ export const initialState: AuthState = {
   is_have_pin: true,
   is_ekyc: true,
   isLoading: false,
-  is_verified_email: true,
+  is_verified_email: false,
   is_temp_pin: true,
   expires_in: null,
   is_not_first_time_login: false,

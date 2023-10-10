@@ -3,10 +3,12 @@
 import React from 'react'
 import {Host} from 'react-native-portalize'
 import Toast from 'react-native-toast-message'
+import {Provider} from 'react-redux'
 import {GestureHandlerRootView} from 'react-native-gesture-handler'
 import {SafeAreaProvider} from 'react-native-safe-area-context'
 import Navigator from './src/navigation'
 import ToastMessage from './src/components/ToastMessage/index'
+import store from 'src/redux/store'
 
 function App(): JSX.Element {
   const toastConfig = {
@@ -23,7 +25,11 @@ function App(): JSX.Element {
     )
   }
 
-  return <GestureHandlerRootView style={{flex: 1}}>{renderApp()}</GestureHandlerRootView>
+  return (
+    <GestureHandlerRootView style={{flex: 1}}>
+      <Provider store={store}>{renderApp()}</Provider>
+    </GestureHandlerRootView>
+  )
 }
 
 export default App
