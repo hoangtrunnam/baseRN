@@ -14,6 +14,7 @@
     "lint:fix": "eslint --quiet \"**/*.{js,ts,tsx}\" --fix"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.19.3",
     "@react-native-masked-view/masked-view": "^0.3.0",
     "@react-navigation/bottom-tabs": "^7.0.0-alpha.5",
     "@react-navigation/drawer": "^7.0.0-alpha.5",
@@ -26,6 +27,7 @@
     "react": "18.2.0",
     "react-native": "0.72.5",
     "react-native-gesture-handler": "^2.13.1",
+    "react-native-keychain": "^8.1.2",
     "react-native-pager-view": "^6.2.1",
     "react-native-portalize": "^1.0.7",
     "react-native-reanimated": "^3.5.4",
