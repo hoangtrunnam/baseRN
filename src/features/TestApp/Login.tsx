@@ -1,9 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
 import {View, Text, TouchableOpacity} from 'react-native'
 import React, {useEffect} from 'react'
-import {routes} from '../../navigation/routes'
-import {testGetUser} from '../../api/Test'
-import type {MainStackScreenNavigationProps} from '../../navigation/types'
+import {routes} from 'src/navigation/routes'
+import type {MainStackScreenNavigationProps} from 'src/navigation/types'
+import {testGetUser} from 'src/api/Test'
 
 interface ILogin extends MainStackScreenNavigationProps<'Login'> {}
 
