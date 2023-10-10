@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import {View, Text, Image} from 'react-native'
+import {View, Text} from 'react-native'
 import React, {useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import {routes} from 'src/navigation/routes'
@@ -11,6 +11,7 @@ import {IMAGES} from 'src/assets/images'
 import DefaultActionBar from 'src/components/DefaultActionBar'
 import LoadingPortal from 'src/components/Loading/LoadingPortal'
 import {LinearGradientButton} from 'src/components/Button/LinearGradientButton'
+import {Thumb} from 'src/components/Image'
 
 interface ILogin extends MainStackScreenNavigationProps<'Login'> {}
 
@@ -34,7 +35,7 @@ const Login = ({navigation}: ILogin) => {
       <DefaultActionBar leftIconType="IconClose" />
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Wallet width={24} height={24} />
-        <Image source={IMAGES.globalImage} style={{width: 240, height: 240}} resizeMode="cover" />
+        <Thumb source={IMAGES.globalImage} style={{height: 200, width: 200}} resizeMode="cover" />
         <Text>Login screen</Text>
         <View style={{backgroundColor: 'red', borderRadius: 16}}>
           <LinearGradientButton
