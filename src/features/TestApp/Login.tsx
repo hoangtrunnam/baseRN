@@ -32,8 +32,14 @@ const Login = ({navigation}: ILogin) => {
 
   return (
     <>
-      <DefaultActionBar leftIconType="IconClose" />
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <DefaultActionBar title="Login screen" />
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: '#ffffff',
+        }}>
         <Wallet width={24} height={24} />
         <Thumb source={IMAGES.globalImage} style={{height: 200, width: 200}} resizeMode="cover" />
         <Text>Login screen</Text>

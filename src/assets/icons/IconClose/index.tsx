@@ -2,8 +2,8 @@ import React from 'react'
 import Svg, {Path} from 'react-native-svg'
 
 interface IconCloseProps {
-  width: number
-  height: number
+  width?: number
+  height?: number
   color?: string
 }
 

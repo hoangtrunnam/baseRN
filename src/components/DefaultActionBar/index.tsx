@@ -14,6 +14,7 @@ import HeaderTitle from './HeaderTitle'
 import {DIMENSION} from 'src/commons/index'
 import ArrowLeft from 'src/assets/icons/ArrowLeft'
 import IconClose from 'src/assets/icons/IconClose'
+import {Divide} from '../Divide'
 
 interface IProps {
   title?: string
@@ -80,9 +81,9 @@ const DefaultActionBar = React.forwardRef<any, IProps>((props: IProps, ref) => {
   const renderLeftIcon = () => {
     switch (leftIconType) {
       case 'back':
-        return <ArrowLeft color="#B7B7B7" width={24} height={24} />
+        return <ArrowLeft color="#B7B7B7" width={16} height={16} />
       case 'IconClose':
-        return <IconClose width={24} height={24} />
+        return <IconClose width={30} height={30} />
       case 'none':
         return null
       default:
@@ -146,10 +147,10 @@ const DefaultActionBar = React.forwardRef<any, IProps>((props: IProps, ref) => {
       <StatusBar translucent backgroundColor="transparent" barStyle={barStyle} />
       <View
         style={{
-          marginTop: DIMENSION.topPadding,
+          marginTop: DIMENSION.topPadding - 10,
           flexDirection: 'row',
           width: '100%',
-          height: 54,
+          height: 40,
           alignItems: 'center',
           justifyContent: 'space-between',
           paddingHorizontal: 16,
@@ -183,7 +184,7 @@ const DefaultActionBar = React.forwardRef<any, IProps>((props: IProps, ref) => {
           style={[
             {
               position: 'absolute',
-              height: 56,
+              height: '100%',
               top: 0,
               justifyContent: 'center',
               left: DIMENSION.width / 2,
@@ -230,7 +231,7 @@ const DefaultActionBar = React.forwardRef<any, IProps>((props: IProps, ref) => {
           </TouchableWithoutFeedback>
         </View>
       </View>
-      {isLineFooter ? <View style={{borderBottomWidth: 1, borderBottomColor: '#CBCBCB'}} /> : null}
+      {isLineFooter ? <Divide size={1} color="#CBCBCB" /> : null}
     </SafeAreaView>
   )
 })
