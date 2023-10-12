@@ -8,12 +8,18 @@ import InputForm from 'src/components/Input/InputForm'
 import InputFormNoBorder from 'src/components/Input/InputFormNoBorder'
 import {TouchRippleSingle} from 'src/components/Button/TouchRippleSingle'
 import ModalTest from './ModalTest'
+import i18n from 'src/locales/i18n'
+import {useLanguage} from 'src/locales/LanguageContext'
+import {defaultColors} from 'src/configs/colors'
 
 const Home = () => {
   const {is_verified_email} = useAppSelector(selectAuth)
   const [value, setValue] = useState<string>('')
   const [someThing, setSomeThing] = useState<string>('')
   const modalizeRef = useRef<any>(null)
+
+  const {language, setLanguage} = useLanguage()
+  i18n.locale = language
 
   console.log('is_verified_email', is_verified_email)
   useEffect(() => {
@@ -29,7 +35,13 @@ const Home = () => {
   }
 
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: defaultColors.h_ffffff,
+      }}>
       <Text>Home</Text>
       <Text>value: {value}</Text>
       <Text>someThing: {someThing}</Text>
@@ -43,7 +55,28 @@ const Home = () => {
         />
       </View>
       <View style={{marginTop: 24, width: '100%'}}>
-        <InputFormNoBorder defaultValue="12" label="something" onChangeValue={setSomeThing} />
+        <InputFormNoBorder
+          defaultValue=""
+          label="type some thing here"
+          onChangeValue={setSomeThing}
+        />
+      </View>
+      <Text>multi lang: {i18n.t('languages.vi')}</Text>
+      <View>
+        <TouchRippleSingle
+          onPress={() => {
+            setLanguage('vi')
+          }}>
+          <Text>press to change to vi</Text>
+        </TouchRippleSingle>
+      </View>
+      <View>
+        <TouchRippleSingle
+          onPress={() => {
+            setLanguage('en')
+          }}>
+          <Text>press to change to en</Text>
+        </TouchRippleSingle>
       </View>
       <View>
         <TouchRippleSingle onPress={onOpen}>

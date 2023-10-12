@@ -11,6 +11,7 @@ import ToastMessage from './src/components/ToastMessage/index'
 import store from 'src/redux/store'
 import LoadingPortal from 'src/components/Loading/LoadingPortal'
 import NetworkStatus from 'src/components/NetworkStatus'
+import {LanguageProvider} from 'src/locales/LanguageContext'
 
 /** khai báo và tạo thêm prototype translate cho string
  * sử dụng cho i18n ở func common, func ngoài component
@@ -28,14 +29,16 @@ function App(): JSX.Element {
   }
   const renderApp = () => {
     return (
-      <Host>
-        <SafeAreaProvider>
-          <Navigator />
-          <NetworkStatus />
-          <LoadingPortal />
-          <Toast config={toastConfig} visibilityTime={1500} />
-        </SafeAreaProvider>
-      </Host>
+      <LanguageProvider>
+        <Host>
+          <SafeAreaProvider>
+            <Navigator />
+            <NetworkStatus />
+            <LoadingPortal />
+            <Toast config={toastConfig} visibilityTime={1500} />
+          </SafeAreaProvider>
+        </Host>
+      </LanguageProvider>
     )
   }
 
