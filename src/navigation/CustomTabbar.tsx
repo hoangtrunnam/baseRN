@@ -1,25 +1,28 @@
 /* eslint-disable react-native/no-inline-styles */
 import type {BottomTabBarProps} from '@react-navigation/bottom-tabs'
 import React from 'react'
-import Tab from './Tab'
 import {SafeAreaView, StyleSheet, View} from 'react-native'
+import Tab from './Tab'
+import {DIMENSION} from 'src/commons/dimension'
+import {defaultColors} from 'src/configs/colors'
 
-export const BOTTOMTAB_HEIGHT = 115
+export const BOTTOMTAB_HEIGHT = 68
 
 const CustomTabbar = ({state, descriptors, navigation}: BottomTabBarProps) => {
   return (
     <SafeAreaView>
       <View style={[styles.container]}>
-        <View style={{position: 'absolute', bottom: -15, left: 0, right: 0}}>
-          {/* <Androw style={styles.shadow}>
-            <Svgs.BgTabbar
-              width="100%"
-              height={BOTTOMTAB_HEIGHT}
-              color={defaultColors.h_ffffff}
+        <View style={{position: 'absolute', bottom: -8, left: 0, right: 0}}>
+          <View style={styles.shadow}>
+            <View
+              style={{
+                width: '100%',
+                height: DIMENSION.isIos ? BOTTOMTAB_HEIGHT : 53,
+                backgroundColor: defaultColors.h_ffffff,
+              }}
             />
-          </Androw> */}
+          </View>
         </View>
-        {/* <View style={StyleSheet.absoluteFill}> */}
         <View style={styles.tabContainer}>
           {state.routes.map((route: any, index: any) => (
             <Tab
@@ -34,7 +37,6 @@ const CustomTabbar = ({state, descriptors, navigation}: BottomTabBarProps) => {
           ))}
         </View>
       </View>
-      {/* </View> */}
     </SafeAreaView>
   )
 }
@@ -53,12 +55,12 @@ const styles = StyleSheet.create({
   tabContainer: {
     marginTop: 'auto',
     width: '100%',
-    height: 50,
+    height: 45,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 15,
-    // backgroundColor: 'red'
+    marginBottom: DIMENSION.hasNotch ? 15 : 0,
+    backgroundColor: '#ffffff',
   },
   shadow: {
     shadowColor: '#000',

@@ -20,4 +20,5 @@ export const DIMENSION = {
   }),
   isAndroid: Platform.OS === 'android',
   isIos: Platform.OS === 'ios',
+  hasNotch: deviceInfoModule.hasNotch(),
 }

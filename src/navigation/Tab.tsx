@@ -1,6 +1,11 @@
 import React, {memo} from 'react'
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import {StyleSheet, TouchableOpacity, View} from 'react-native'
 import {routes} from './routes'
+import IconHome from 'src/assets/icons/IconHome'
+import IconGift from 'src/assets/icons/IconGift'
+import IconNoti from 'src/assets/icons/IconNoti'
+import IconUser from 'src/assets/icons/IconUser'
+import {defaultColors} from 'src/configs/colors'
 
 const Tab = ({
   isFocused,
@@ -17,16 +22,24 @@ const Tab = ({
 
   const renderIcon = () => {
     if (label === routes.Home) {
-      return <Text>img1</Text>
+      return (
+        <IconHome width={36} height={36} color={isFocused ? defaultColors.primary : undefined} />
+      )
     }
     if (label === routes.Gift) {
-      return <Text>img1</Text>
+      return (
+        <IconGift width={36} height={36} color={isFocused ? defaultColors.primary : undefined} />
+      )
     }
     if (label === routes.Notifications) {
-      return <Text>img1</Text>
+      return (
+        <IconNoti width={36} height={36} color={isFocused ? defaultColors.primary : undefined} />
+      )
     }
     if (label === routes.UserProfile) {
-      return <Text>img1</Text>
+      return (
+        <IconUser width={36} height={36} color={isFocused ? defaultColors.primary : undefined} />
+      )
     }
 
     return false
@@ -59,7 +72,7 @@ const Tab = ({
           testID={options.tabBarTestID}
           onPress={onPress}
           onLongPress={onLongPress}
-          style={[styles.tab, label === routes.Home && styles.tabHome]}>
+          style={[styles.tab]}>
           <View>{renderIcon()}</View>
         </TouchableOpacity>
       )}
@@ -71,9 +84,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  tabHome: {
-    marginTop: -30,
   },
 })
 

@@ -3,7 +3,6 @@ import React, {useImperativeHandle, useState} from 'react'
 import {View, Text} from 'react-native'
 import type {Modalize} from 'react-native-modalize'
 import IconClose from 'src/assets/icons/IconClose'
-import {DIMENSION} from 'src/commons/dimension'
 import {LinearGradientButton} from 'src/components/Button/LinearGradientButton'
 import {TouchRippleSingle} from 'src/components/Button/TouchRippleSingle'
 import BottomPopupModalize from 'src/components/PopupModal/BottomPopupModalize'
@@ -46,7 +45,6 @@ const ModalTest = React.forwardRef((_props, ref) => {
       ref={refModal}
       modalizeProps={{
         handlePosition: 'inside',
-        modalHeight: DIMENSION.height - 60,
         HeaderComponent: (
           <View
             style={{
