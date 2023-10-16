@@ -3,6 +3,9 @@
  * được lấy theo design
  * nếu co thay đổi cần ghi rõ dùng ở đâu
  */
+import darkColors from './dark'
+import lightColors from './light'
+
 export const defaultColors = {
   transparent: 'transparent',
 
@@ -417,9 +420,9 @@ export type AppColor = typeof defaultColors
 export default {
   default: defaultColors,
   light: {
-    ...defaultColors,
+    ...lightColors,
   },
   dark: {
-    ...defaultColors,
+    ...darkColors,
   },
 }

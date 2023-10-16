@@ -9,11 +9,13 @@ import InputFormNoBorder from 'src/components/Input/InputFormNoBorder'
 import {TouchRippleSingle} from 'src/components/Button/TouchRippleSingle'
 import ModalTest from './ModalTest'
 import i18n from 'src/locales/i18n'
-import {useLanguage} from 'src/locales/LanguageContext'
-import {defaultColors} from 'src/configs/colors'
+import {useColors, useLanguage, useTheme} from 'src/locales/AppContext'
+// import {defaultColors} from 'src/configs/colors'
 
 const Home = () => {
   const {is_verified_email} = useAppSelector(selectAuth)
+  const colors = useColors()
+  const setTheme = useTheme()
   const [value, setValue] = useState<string>('')
   const [someThing, setSomeThing] = useState<string>('')
   const modalizeRef = useRef<any>(null)
@@ -40,7 +42,7 @@ const Home = () => {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: defaultColors.h_ffffff,
+        backgroundColor: colors.primary,
       }}>
       <Text>Home</Text>
       <Text>value: {value}</Text>
@@ -66,16 +68,18 @@ const Home = () => {
         <TouchRippleSingle
           onPress={() => {
             setLanguage('vi')
+            setTheme('light')
           }}>
-          <Text>press to change to vi</Text>
+          <Text>press to change to vi and light theme</Text>
         </TouchRippleSingle>
       </View>
       <View>
         <TouchRippleSingle
           onPress={() => {
             setLanguage('en')
+            setTheme('dark')
           }}>
-          <Text>press to change to en</Text>
+          <Text>press to change to en and dark theme</Text>
         </TouchRippleSingle>
       </View>
       <View>
