@@ -1,9 +1,3 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
-
-# Getting Started
-
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
-
 ## Step 1: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
@@ -42,38 +36,146 @@ npm run ios
 yarn ios
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## 1. Thumb 
+- import from `src/components`
+- sử dụng `<FastImage>` hiển thị ảnh, thay thế `<Image>` react-native
+- nếu đang load: hiển thị `Loading`, nếu lỗi hiển thị ảnh nền default, nếu load thành công hiển thị ảnh thật
 
-## Step 3: Modifying your App
+## 2. Header
+- import from `src/components`
+- tạo header cho page
+- chứa title, goBack(), renderRight() (nếu cần), ...
 
-Now that you have successfully run the app, let's modify it.
+## 3. Các component, hàm dùng chung
+- ButtonCustom: Dùng để design các button
+- FooterSingleButton: Dùng để hiện bottom button với 1 action
+- PackageCard
+- formatNumberWithCurrency, formatNumberWithoutCurrency: dùng để format number có dấu chấm ngăn cách
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-## Congratulations! :tada:
+# II. Common
 
-You've successfully run and modified your React Native App. :partying_face:
+## 1. isIphoneX
+- Trả về device có phải là dạng iphoneX hay không
 
-### Now what?
+## 2. getOffset
+- Trả về `statusBar` và `bottomSpace`
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
 
-# Troubleshooting
+# III. Api
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## 1. debounce
+- tránh việc gọi 1 func liên tục ( ví dụ request api liên tục)
+- debounce: (func: (...arg: any[]) => void, wait: number, immediate?: boolean) => (...args: any[]) => void;
 
-# Learn More
 
-To learn more about React Native, take a look at the following resources:
+# IV. Configs
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## 1. colors
+- cách dùng
+     ``` javascript
+        import { useAppColors } from 'src/configs'
+        ...
+
+        const colors = useAppColors()
+        ...
+
+        <View style={{backgroundColor: colors.red}}>
+    ```
+- format colors
+    ``` javascript
+       // background color
+        // #FFF5E9
+        bg_FFF5E9: '#FFF5E9',
+        ...
+        // text
+        // #E0E1E0
+        text_E0E1E0: '#E0E1E0',
+        ...
+        // status color
+        // format: h_color | rgb_r_g_b | rgba_r_g_b_a
+        h_2E92FF: '#2E92FF',
+        rgba_29_172_14_15: 'rgba(29, 172, 14, 0.15)',
+        ...
+    ```
+
+## 2. I18n
+- cách dùng
+     ``` javascript
+        import i18n from 'src/locales/i18n'
+        ...
+
+        {i18n.t('languages.vi')}
+        ...
+        
+    ```
+- format i18n
+    ``` javascript
+
+            labels: {
+                name: 'tên',
+            },
+            placeholders: {},
+            errors: {},
+            messages: {},
+            actions: {},
+        
+    ```
+
+# V. Navigation
+
+## 1.Stack
+
+- cách tạo mới stack screen
+    + tạo màn hình mới
+    + khai báo tên trong `src/navigation/routes`
+    + tạo `<Stack.Screen>` trong `src/navigation/MainStack`
+- chuyển screen
+        ``` javascript
+
+            onPress={() => navigation.navigate(routes_name)}
+            onPress={() => navigation.push(routes_name, {params})}
+        
+        ```
+- lấy param
+    ``` javascript
+
+        const { itemId , otherParam} = route.params
+        
+    ```
+  
+
+# VI. Icon
+
+- import from `src/assets/icons/`
+- sử dụng ảnh svg trong các folder tương ứng: action, arrow, ...
+
+# VII. Commit Lint
+- commit theo đúng định dạng, nếu không đúng định dạng sẽ báo lỗi
+- format cơ bản
+        type(scope?): subject   
+        #scope là optional;
+- ví dụ: 
+    git commit -m 'chore: run tests on travis ci'
+    git commit -m 'fix(server): send cors headers'
+    git commit -m 'feat(blog): add comment section'
+- type cơ bản: 
+    + build : build
+    + chore : việc vặt
+    + docs : tài liệu
+    + feat : tính năng
+    + fix : fix 
+    + perf : hoàn thành
+    + refactor : cấu trúc lại
+    + revert : hoàn lại
+    + style : style
+    + test : test
+    + add : thêm
+
+# VIII. Define Name
+- Đặt tên biến đúng với kiểu dữ liệu, List thì chỉ chuyển list vào, Object thì chỉ chuyển Object vào....
+- Đặt tên một biết Array hạn chế sử dụng tiền tốt list: vì dụ ListItem => Items.
+- Đặt tên hàm call api = có tiền tố api* . Ví dụ: apiGetDetail()
+- Đặt tên icon: Icon + tên icon. Ví dụ: IconAdd. Tên icon đặt giống trên figma, trường hợp trên figma không có tên mới tự định nghĩa tên.
