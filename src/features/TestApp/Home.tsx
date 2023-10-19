@@ -10,7 +10,7 @@ import {TouchRippleSingle} from 'src/components/Button/TouchRippleSingle'
 import ModalTest from './ModalTest'
 import i18n from 'src/locales/i18n'
 import {useColors, useLanguage, useTheme} from 'src/locales/AppContext'
-// import {defaultColors} from 'src/configs/colors'
+import {AlertProvider} from 'src/components/Alert'
 
 const Home = () => {
   const {is_verified_email} = useAppSelector(selectAuth)
@@ -34,6 +34,27 @@ const Home = () => {
   const onOpen = () => {
     console.log('run here')
     modalizeRef.current?.openModal()
+  }
+
+  const onOpenAlert = () => {
+    AlertProvider.show({
+      title: 'Xin chào tất cả mọi người',
+      content: 'Đây là code base do Nam Hoàng phát triển <3',
+      actions: [
+        {
+          text: 'No',
+          onPress: () => {
+            console.log('press cancel')
+          },
+        },
+        {
+          text: 'Okay',
+          onPress: () => {
+            console.log('press ok')
+          },
+        },
+      ],
+    })
   }
 
   return (
@@ -85,6 +106,11 @@ const Home = () => {
       <View>
         <TouchRippleSingle onPress={onOpen}>
           <Text>press to open modal</Text>
+        </TouchRippleSingle>
+      </View>
+      <View>
+        <TouchRippleSingle onPress={onOpenAlert}>
+          <Text>Alert</Text>
         </TouchRippleSingle>
       </View>
       <ModalTest ref={modalizeRef} />

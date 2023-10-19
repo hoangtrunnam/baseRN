@@ -13,6 +13,7 @@ import LoadingPortal from 'src/components/Loading/LoadingPortal'
 import NetworkStatus from 'src/components/NetworkStatus'
 import {AppProvider} from 'src/locales/AppContext'
 import colors from 'src/configs/colors'
+import {AlertProvider} from 'src/components/Alert'
 
 /** khai báo và tạo thêm prototype translate cho string
  * sử dụng cho i18n ở func common, func ngoài component
@@ -45,7 +46,9 @@ function App(): JSX.Element {
 
   return (
     <GestureHandlerRootView style={{flex: 1}}>
-      <Provider store={store}>{renderApp()}</Provider>
+      <Provider store={store}>
+        <AlertProvider>{renderApp()}</AlertProvider>
+      </Provider>
     </GestureHandlerRootView>
   )
 }
