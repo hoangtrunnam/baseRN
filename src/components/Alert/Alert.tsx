@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
   textTitle: {
     fontSize: 16,
     color: '#000',
-    weight: '600',
+    fontWeight: '600',
   },
   textContent: {
     marginTop: 8,
