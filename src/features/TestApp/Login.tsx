@@ -32,7 +32,7 @@ const Login = ({navigation}: ILogin) => {
 
   return (
     <>
-      <DefaultActionBar title="Login screen" />
+      <DefaultActionBar leftIconType="none" title="Login screen" />
       <View
         style={{
           flex: 1,

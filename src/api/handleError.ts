@@ -2,6 +2,7 @@ import axios from 'axios'
 import type {ApiResponse} from './types'
 
 export const handleError: (error: any) => ApiResponse<any> = error => {
+  console.log('error', error)
   if (axios.isCancel(error)) {
     return {
       status: 0,
