@@ -7,6 +7,13 @@
   resolved "https://registry.yarnpkg.com/@aashutoshrathi/word-wrap/-/word-wrap-1.2.6.tgz#bd9154aec9983f77b3a034ecaa015c2e4201f6cf"
   integrity sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==
 
+"@alessiocancian/react-native-actionsheet@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@alessiocancian/react-native-actionsheet/-/react-native-actionsheet-3.2.0.tgz#9f59d8a1905dab62944a4a55fa40e02b8249a272"
+  integrity sha512-k6AZRpzyqf9LGRX+STeGoHuTKPAxX+DfOQWzLOFNCkXO2YAH+o9RYYU0B0z80eKBvGp+TuRzliMjOG6AHYD66A==
+  dependencies:
+    "@react-native-community/blur" "^4.2.0"
+
 "@ampproject/remapping@^2.2.0":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.2.1.tgz#99e8e11851128b8702cd57c33684f1d0f260b630"
@@ -1551,6 +1558,11 @@
   version "1.12.1"
   resolved "https://registry.yarnpkg.com/@react-native-clipboard/clipboard/-/clipboard-1.12.1.tgz#a23f9defb732077afa860d0598baa95f5ee9f54b"
   integrity sha512-+PNk8kflpGte0W1Nz61/Dp8gHTxyuRjkVyRYBawymSIGTDHCC/zOJSbig6kGIkD8MeaGHC2vGYQJyUyCrgVPBQ==
+
+"@react-native-community/blur@^4.2.0":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/blur/-/blur-4.3.2.tgz#185a2c7dd03ba168cc95069bc4742e9505fd6c6c"
+  integrity sha512-0ID+pyZKdC4RdgC7HePxUQ6JmsbNrgz03u+6SgqYpmBoK/rE+7JffqIw7IEsfoKitLEcRNLGekIBsfwCqiEkew==
 
 "@react-native-community/cli-clean@11.3.7":
   version "11.3.7"
