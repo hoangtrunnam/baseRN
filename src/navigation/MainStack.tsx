@@ -9,6 +9,7 @@ import Home from 'src/features/TestApp/Home'
 import Login from 'src/features/TestApp/Login'
 import Notifications from 'src/features/TestApp/Notifications'
 import UserProfile from 'src/features/TestApp/UserProfile'
+import DetailCalender from 'src/features/TestApp/DetailCalender'
 const Stack = createStackNavigator<MainNavigationParamList>()
 
 const MainStack: React.FC<any> = () => {
@@ -33,6 +34,7 @@ const MainStack: React.FC<any> = () => {
       <Stack.Screen name={routes.Gift} component={Gift} />
       <Stack.Screen name={routes.Home} component={Home} />
       <Stack.Screen name={routes.UserProfile} component={UserProfile} />
+      <Stack.Screen name={routes.DetailCalender} component={DetailCalender} />
     </Stack.Navigator>
   )
 }
