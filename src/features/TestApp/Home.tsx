@@ -11,8 +11,12 @@ import ModalTest from './ModalTest'
 import i18n from 'src/locales/i18n'
 import {useColors, useLanguage, useTheme} from 'src/locales/AppContext'
 import {AlertProvider} from 'src/components/Alert'
+import type {MainStackScreenNavigationProps} from 'src/navigation/types'
+import {routes} from 'src/navigation/routes'
 
-const Home = () => {
+interface ILogin extends MainStackScreenNavigationProps<'Home'> {}
+
+const Home = ({navigation}: ILogin) => {
   const {is_verified_email} = useAppSelector(selectAuth)
   const colors = useColors()
   const setTheme = useTheme()
@@ -111,6 +115,14 @@ const Home = () => {
       <View>
         <TouchRippleSingle onPress={onOpenAlert}>
           <Text>Alert</Text>
+        </TouchRippleSingle>
+      </View>
+      <View>
+        <TouchRippleSingle
+          onPress={() => {
+            navigation.navigate(routes.DetailCalender)
+          }}>
+          <Text>Calender</Text>
         </TouchRippleSingle>
       </View>
       <ModalTest ref={modalizeRef} />

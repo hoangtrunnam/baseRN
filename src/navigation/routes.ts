@@ -14,4 +14,5 @@ export const routes: Entries<RoutesType> = {
   Home: 'Home',
   Login: 'Login',
   UserProfile: 'UserProfile',
+  DetailCalender: 'DetailCalender',
 }
