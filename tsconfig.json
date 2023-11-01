@@ -61,5 +61,6 @@
     "src/features/Introduction/Components/Swiper.js",
     ".storybook/Storybook.tsx",
     "./.storybook/preview.js",
+    "__mocks__/mockNavigation.js"
   ]
 }

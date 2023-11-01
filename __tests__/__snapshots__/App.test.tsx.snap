@@ -1,0 +1,336 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+[
+  <RCTSafeAreaView
+    style={
+      {
+        "backgroundColor": "#ffffff",
+      }
+    }
+  >
+    <View
+      leftIconType="none"
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 40,
+          "justifyContent": "space-between",
+          "marginTop": -10,
+          "paddingHorizontal": 16,
+          "width": "100%",
+        }
+      }
+      title="Login screen"
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": true,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      />
+      <View
+        style={
+          [
+            {
+              "height": "100%",
+              "justifyContent": "center",
+              "left": 375,
+              "position": "absolute",
+              "top": 0,
+            },
+            {
+              "transform": [
+                {
+                  "translateX": -310,
+                },
+              ],
+              "width": 620,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            {
+              "alignItems": "stretch",
+              "color": "#535353",
+              "fontSize": 20,
+              "fontWeight": "500",
+              "textAlign": "center",
+            }
+          }
+        >
+          Login screen
+        </Text>
+      </View>
+      <View>
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "backgroundColor": "transparent",
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "color": undefined,
+                  "fontSize": 16,
+                  "fontWeight": "600",
+                  "justifyContent": "center",
+                  "textAlign": "center",
+                  "textDecorationLine": "underline",
+                },
+                undefined,
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        {
+          "backgroundColor": "#CBCBCB",
+          "height": 1,
+          "width": "100%",
+        }
+      }
+    />
+  </RCTSafeAreaView>,
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#ffffff",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="24"
+      bbWidth="24"
+      fill="none"
+      focusable={false}
+      height={24}
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 24,
+            "width": 24,
+          },
+        ]
+      }
+      vbHeight={18}
+      vbWidth={19}
+      width={24}
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          clipRule={0}
+          d="M16.6611 3.14668H14.3424L12.8636 0.592979C12.6018 0.141 11.9526 -0.211776 11.3266 0.148534L6.11808 3.14668H1.25143C0.397825 3.14668 0 3.9263 0 4.50191V16.6448C0 17.2204 0.397825 18 1.25143 18H16.6611C17.5147 18 17.9126 17.2204 17.9126 16.6448V13.4464H17.9937C18.4984 13.4464 19 13.0549 19 12.4556V8.47429C19 7.87497 18.4984 7.48341 17.9937 7.48341H17.9126V4.50191C17.9126 3.9263 17.5147 3.14668 16.6611 3.14668ZM11.8186 13.4464H16.2814V16.3737H1.63116V4.77295H16.2814V7.48341H11.8186C11.3139 7.48341 10.8123 7.87497 10.8123 8.47429V12.4556C10.8123 13.0549 11.3139 13.4464 11.8186 13.4464ZM11.6892 1.81765L12.4589 3.14668H9.3804L11.6892 1.81765ZM12.4435 9.10969V11.8201H17.3688V9.10969H12.4435Z"
+          fill={
+            {
+              "payload": 4279114821,
+              "type": 0,
+            }
+          }
+          fillRule={0}
+          propList={
+            [
+              "fill",
+              "fillRule",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <View
+      style={
+        {
+          "height": 200,
+          "width": 200,
+        }
+      }
+    >
+      <View
+        style={
+          [
+            {
+              "overflow": "hidden",
+            },
+            {
+              "height": 200,
+              "width": 200,
+            },
+          ]
+        }
+      >
+        <FastImageView
+          defaultSource={null}
+          onFastImageError={[Function]}
+          onFastImageLoad={[Function]}
+          resizeMode="cover"
+          source={null}
+          style={
+            {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "rgba(0,0,0,0.4)",
+            "borderBottomLeftRadius": undefined,
+            "borderBottomRightRadius": undefined,
+            "borderRadius": undefined,
+            "borderTopLeftRadius": undefined,
+            "borderTopRightRadius": undefined,
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <ActivityIndicator
+          color="#62267B"
+          size="small"
+        />
+      </View>
+    </View>
+    <Text>
+      Login screen
+    </Text>
+    <View
+      style={
+        {
+          "backgroundColor": "red",
+          "borderRadius": 16,
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        hitSlop={
+          {
+            "bottom": 10,
+            "left": 10,
+            "right": 10,
+            "top": 10,
+          }
+        }
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onLayout={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <Text>
+           Login
+        </Text>
+        <View
+          pointerEvents="box-only"
+          style={
+            {
+              "bottom": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>,
+]
+`;

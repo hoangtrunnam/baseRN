@@ -182,7 +182,6 @@ export default InputForm
 const styles = StyleSheet.create({
   inputStyle: {
     fontSize: 14,
-    fontFamily: 'Mulish-Regular',
     color: '#0E1C45',
     paddingVertical: 0,
     paddingHorizontal: 0,
