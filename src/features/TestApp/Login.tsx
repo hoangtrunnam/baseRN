@@ -34,6 +34,7 @@ const Login = ({navigation}: ILogin) => {
     <>
       <DefaultActionBar leftIconType="none" title="Login screen" />
       <View
+        testID="welcome"
         style={{
           flex: 1,
           justifyContent: 'center',
