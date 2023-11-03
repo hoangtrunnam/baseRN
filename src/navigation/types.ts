@@ -22,6 +22,8 @@ export type MainNavigationParamList = {
   Login: undefined
   UserProfile: undefined
   DetailCalender: undefined
+  MapViewLocation: undefined
+  GoogleMapDirection: undefined
 }
 
 export type RoutesType = BottomTabNavigationParamList & MainNavigationParamList

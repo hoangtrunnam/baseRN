@@ -14,6 +14,9 @@ import NetworkStatus from 'src/components/NetworkStatus'
 import {AppProvider} from 'src/locales/AppContext'
 import colors from 'src/configs/colors'
 import {AlertProvider} from 'src/components/Alert'
+import {enableLatestRenderer} from 'react-native-maps'
+
+enableLatestRenderer()
 
 /** khai báo và tạo thêm prototype translate cho string
  * sử dụng cho i18n ở func common, func ngoài component

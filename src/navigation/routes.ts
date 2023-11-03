@@ -15,4 +15,6 @@ export const routes: Entries<RoutesType> = {
   Login: 'Login',
   UserProfile: 'UserProfile',
   DetailCalender: 'DetailCalender',
+  MapViewLocation: 'MapViewLocation',
+  GoogleMapDirection: 'GoogleMapDirection',
 }

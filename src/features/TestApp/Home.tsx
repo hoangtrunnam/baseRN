@@ -120,6 +120,14 @@ const Home = ({navigation}: ILogin) => {
       <View>
         <TouchRippleSingle
           onPress={() => {
+            navigation.navigate(routes.GoogleMapDirection)
+          }}>
+          <Text>Open MapView</Text>
+        </TouchRippleSingle>
+      </View>
+      <View>
+        <TouchRippleSingle
+          onPress={() => {
             navigation.navigate(routes.DetailCalender)
           }}>
           <Text>Calender</Text>
