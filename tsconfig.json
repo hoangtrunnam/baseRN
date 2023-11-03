@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["jest"],
     "paths": {
       "src/api/*": ["src/api/*"],
       "src/assets/*": ["src/assets/*"],
