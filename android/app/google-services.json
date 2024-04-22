@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "787441394439",
+    "project_id": "daisei-portal",
+    "storage_bucket": "daisei-portal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787441394439:android:d81c13809accc6c4729ba2",
+        "android_client_info": {
+          "package_name": "com.hakonehoteldev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChWkWZ4A2wASGkqzkoi3IKNldkqDAGpXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787441394439:android:bd9f4be66a7cae91729ba2",
+        "android_client_info": {
+          "package_name": "com.hakonehotelstage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChWkWZ4A2wASGkqzkoi3IKNldkqDAGpXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

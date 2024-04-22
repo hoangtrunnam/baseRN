@@ -1,0 +1,30 @@
+name: Pull Request into develop-v2
+on:
+  pull_request:
+    branches:
+      - "develop-v2"
+
+jobs:
+  #First job
+  install-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "yarn"
+
+      - name: Install Node modules
+        run: yarn ci-install
+
+      - name: Linting
+        run: yarn checklint
+
+      - name: Unit & Integration tests
+        run: yarn test:ci
+
