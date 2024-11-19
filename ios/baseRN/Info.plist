@@ -20,6 +20,17 @@
 	<string>IOS_APP_VERSION_CODE</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.425820145476-j7vquv6g7spvqou51kn32sfnctdn018e</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>IOS_APP_BUILD_CODE</string>
 	<key>LSRequiresIPhoneOS</key>

@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useState} from 'react'
-import {TextInput, TextInputProps} from 'react-native'
+import {TextInput, type TextInputProps} from 'react-native'
 import {View, Text} from 'react-native'
 import HiddenEye from 'src/assets/icons/HidenEye'
 import ShowEye from 'src/assets/icons/ShowEye'
