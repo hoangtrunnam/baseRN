@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import {View, Text} from 'react-native'
+import {View, Text, Platform} from 'react-native'
 import React, {useEffect, useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {routes} from 'src/navigation/routes'
@@ -21,7 +21,12 @@ import {
   isSuccessResponse,
   statusCodes,
 } from '@react-native-google-signin/google-signin'
-import { LoginManager, AccessToken } from 'react-native-fbsdk-next';
+import {
+  LoginManager,
+  AccessToken,
+  AuthenticationToken,
+  Profile,
+} from 'react-native-fbsdk-next'
 
 GoogleSignin.configure({
   iosClientId:
@@ -84,22 +89,35 @@ const Login = ({navigation}: ILogin) => {
   }
 
   const handleLoginWithFaceBook = async () => {
-    const result = await LoginManager.logInWithPermissions(['public_profile', 'email']);
+    try {
+      const result = await LoginManager.logInWithPermissions(
+        ['public_profile', 'email'],
+      )
+      console.log('🚀 ~ handleLoginWithFaceBook ~ result:', result)
 
-    if (result.isCancelled) {
-      throw 'User cancelled the login process';
+      if (result.isCancelled) {
+        console.log('User cancelled the login process')
+        throw 'User cancelled the login process'
+      }
+
+      // Once signed in, get the users AccessToken
+      const data = await AccessToken.getCurrentAccessToken()
+      if (!data) {
+        console.log("🚀 ~ handleLoginWithFaceBook ~ not have data :", data)
+        throw 'Something went wrong obtaining access token'
+      } else {
+        const profile = await Profile.getCurrentProfile()
+        console.log('🚀 ~ profile:', profile)
+        console.log('this is data includes token: ', data)
+      }
+    } catch (error) {
+      console.log('error', error)
     }
-    // Once signed in, get the users AccessToken
-    const data = await AccessToken.getCurrentAccessToken();
-    if (!data) {
-      throw 'Something went wrong obtaining access token';
-    }
-  
   }
-
 
   // FB secret code: f8b3b2a9c53d6571285ad12642494f52
   // FB app id: 864070669142714
+  // FB client id: c80796450369eaf549eb8aba26d08e8e
 
   // useEffect(() => {
   //   LoadingPortal.show()
