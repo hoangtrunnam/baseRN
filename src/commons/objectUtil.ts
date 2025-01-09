@@ -1,7 +1,6 @@
 import Clipboard from '@react-native-clipboard/clipboard'
 import _ from 'lodash'
 import ReactNativeBlobUtil from 'react-native-blob-util'
-import openMap from 'react-native-open-maps'
 import Toast from 'react-native-toast-message'
 import {baseUrl} from 'src/api/config'
 import {requestID} from './validator'
@@ -94,10 +93,6 @@ export const copyText = (text: string) => {
   Clipboard.setString(text)
 }
 
-/** func mo ban do */
-export const openGPS = (lat: any, lng: any, query?: string) => {
-  openMap({latitude: Number(lat), longitude: Number(lng), query})
-}
 
 /** func get file name from path */
 export const getFileName = (path: string) => {

@@ -1103,7 +1103,7 @@ PODS:
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-  - RNLocalize (2.2.1):
+  - RNLocalize (3.3.0):
     - React-Core
   - RNPermissions (3.9.3):
     - React-Core
@@ -1429,7 +1429,7 @@ SPEC CHECKSUMS:
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
   RNGestureHandler: f5160496947abe7f1351d39887cc99bbf5e72507
   RNKeychain: 3afde9a75ffb2ed1a3139555332efc30f5d7a541
-  RNLocalize: cbcb55d0e19c78086ea4eea20e03fe8000bbbced
+  RNLocalize: 298e85ce16540a11de40c1a588ead39fc5e9a072
   RNPermissions: ac5991487ad04ad1888b26896d44d969e65531b7
   RNReanimated: 493854c0a7569a1e70637d1c9790d3cdf12e2922
   RNScreens: 9e8dfa7786aee3750d2b9dae424f0f287632ca8c
