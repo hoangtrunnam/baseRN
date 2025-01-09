@@ -1085,7 +1085,9 @@ PODS:
     - React-Core
   - RNCClipboard (1.16.0):
     - React-Core
-  - RNCMaskedView (0.3.0):
+  - RNCMaskedView (0.3.2):
+    - glog
+    - RCT-Folly (= 2022.05.16.00)
     - React-Core
   - RNDeviceInfo (10.11.0):
     - React-Core
@@ -1420,7 +1422,7 @@ SPEC CHECKSUMS:
   ReactCommon: ddb128564dcbfa0287d3d1a2d10f8c7457c971f6
   RNCAsyncStorage: cc6479c4acd84cc7004946946c8afe30b018184d
   RNCClipboard: 88f7f4933e7731052210d77535560c485ecb75b0
-  RNCMaskedView: f7c74478c83c4fdfc5cf4df51f80c0dd5cf125c6
+  RNCMaskedView: 1611be41c9f78f5ecbcff2360b0891593c1c0ce1
   RNDeviceInfo: bf8a32acbcb875f568217285d1793b0e8588c974
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
   RNGestureHandler: f5160496947abe7f1351d39887cc99bbf5e72507
