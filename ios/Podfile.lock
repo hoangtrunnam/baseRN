@@ -1137,7 +1137,7 @@ PODS:
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
     - React-RCTImage
-  - RNSVG (13.14.0):
+  - RNSVG (15.10.1):
     - React-Core
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
@@ -1435,7 +1435,7 @@ SPEC CHECKSUMS:
   RNPermissions: 48c2de95ba332d8d185b2624c87e21a0526f7352
   RNReanimated: 493854c0a7569a1e70637d1c9790d3cdf12e2922
   RNScreens: 9e8dfa7786aee3750d2b9dae424f0f287632ca8c
-  RNSVG: d00c8f91c3cbf6d476451313a18f04d220d4f396
+  RNSVG: 7ff26379b2d1871b8571e6f9bc9630de6baf9bdf
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
