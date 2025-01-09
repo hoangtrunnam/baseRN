@@ -3,7 +3,7 @@ import React, {useCallback, useImperativeHandle, useRef, useState} from 'react'
 // components
 import CalendarList from './CalendarList'
 // data
-import {LOCALE, LOCALE_TYPE} from './Utils/locale'
+import {LOCALE, type LOCALE_TYPE} from './Utils/locale'
 
 export interface Style {
   container?: {}

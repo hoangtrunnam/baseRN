@@ -2,7 +2,7 @@ import moment from 'moment'
 import React, {memo} from 'react'
 import {StyleSheet, Text, View} from 'react-native'
 import type {Style} from './index'
-import {getWeeks, Month_Type, Week_Type} from './Utils/data'
+import {getWeeks, type Month_Type, type Week_Type} from './Utils/data'
 import type {LOCALE_TYPE} from './Utils/locale'
 import Week from './Week'
 

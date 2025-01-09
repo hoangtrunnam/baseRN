@@ -2,10 +2,10 @@
 import React, {useEffect, useRef, useState} from 'react'
 import {
   Animated,
-  GestureResponderEvent,
-  LayoutChangeEvent,
+  type GestureResponderEvent,
+  type LayoutChangeEvent,
   Pressable,
-  PressableProps,
+  type PressableProps,
   StyleSheet,
   Easing,
   View,

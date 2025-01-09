@@ -4,7 +4,7 @@ import React, {useCallback, useMemo} from 'react'
 import {ActivityIndicator, FlatList, View} from 'react-native'
 import type {Style} from './index'
 import Month from './Month'
-import {getMonths, Month_Type} from './Utils/data'
+import {getMonths, type Month_Type} from './Utils/data'
 import type {LOCALE_TYPE} from './Utils/locale'
 import {defaultColors} from 'src/configs/colors'
 

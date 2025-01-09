@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {ReactElement} from 'react'
-import {StyleSheet, TextStyle, View, ViewStyle, Text} from 'react-native'
+import React, {type ReactElement} from 'react'
+import {StyleSheet, type TextStyle, View, type ViewStyle, Text} from 'react-native'
 import {TouchRippleSingle} from './TouchRippleSingle'
 import {defaultColors} from 'src/configs/colors'
 

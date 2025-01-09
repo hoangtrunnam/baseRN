@@ -5,9 +5,9 @@ import {
   request,
   checkNotifications,
   requestNotifications,
-  AndroidPermission,
-  IOSPermission,
-  PermissionStatus,
+  type AndroidPermission,
+  type IOSPermission,
+  type PermissionStatus,
 } from 'react-native-permissions'
 
 export interface IPayloadRequestPermission {

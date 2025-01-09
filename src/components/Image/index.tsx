@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useRef, useState} from 'react'
 import {ActivityIndicator, Image, Platform, StyleSheet, View} from 'react-native'
-import FastImage, {FastImageProps} from 'react-native-fast-image'
+import FastImage, {type FastImageProps} from 'react-native-fast-image'
 import Animated from 'react-native-reanimated'
 import {IMAGES} from 'src/assets/images'
 

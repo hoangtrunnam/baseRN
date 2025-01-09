@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import axios, {AxiosRequestConfig, AxiosResponse, CancelTokenSource} from 'axios'
+import axios, {type AxiosRequestConfig, type AxiosResponse, type CancelTokenSource} from 'axios'
 import Keychain from 'react-native-keychain'
 import LoadingPortal from 'src/components/Loading/LoadingPortal'
 // import {navigateFromCurrentScreen} from 'src/navigation/navigationHelper'

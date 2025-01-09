@@ -1,7 +1,7 @@
-import React, {ReactNode} from 'react'
+import React, {type ReactNode} from 'react'
 import {
-  GestureResponderEvent,
-  PressableProps,
+  type GestureResponderEvent,
+  type PressableProps,
   StyleSheet,
   TouchableWithoutFeedback,
 } from 'react-native'

@@ -179,3 +179,8 @@ yarn ios
 - Đặt tên một biết Array hạn chế sử dụng tiền tốt list: vì dụ ListItem => Items.
 - Đặt tên hàm call api = có tiền tố api* . Ví dụ: apiGetDetail()
 - Đặt tên icon: Icon + tên icon. Ví dụ: IconAdd. Tên icon đặt giống trên figma, trường hợp trên figma không có tên mới tự định nghĩa tên.
+
+# IX. NOTE:
+- node >= 18
+- java >= 17
+- build android bằng lệnh, android studio đang gặp lỗi không xác định

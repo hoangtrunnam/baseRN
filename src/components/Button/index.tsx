@@ -2,10 +2,10 @@
 import React from 'react'
 
 import {
-  GestureResponderEvent,
-  PressableProps,
+  type GestureResponderEvent,
+  type PressableProps,
   StyleSheet,
-  ViewProps,
+  type ViewProps,
   Text,
   View,
 } from 'react-native'

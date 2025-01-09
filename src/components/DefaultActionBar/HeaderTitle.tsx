@@ -1,5 +1,5 @@
 import React from 'react'
-import {Text, View, ViewProps} from 'react-native'
+import {Text, View, type ViewProps} from 'react-native'
 
 interface HeaderTitleProps extends ViewProps {
   center?: boolean

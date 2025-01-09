@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react'
-import LinearGradient, {LinearGradientProps} from 'react-native-linear-gradient'
+import React, {type ReactNode} from 'react'
+import LinearGradient, {type LinearGradientProps} from 'react-native-linear-gradient'
 import TouchRipple from './TouchRipple'
 
 interface IProps extends Omit<LinearGradientProps, 'colors'> {

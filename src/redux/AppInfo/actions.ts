@@ -1,4 +1,4 @@
-import {app_info_types, LanguagePayload} from './types'
+import {app_info_types, type LanguagePayload} from './types'
 
 /** lưu lại ngôn ngữ */
 export const setLanguageToStore = (payload: LanguagePayload) => {

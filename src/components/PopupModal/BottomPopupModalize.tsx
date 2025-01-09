@@ -1,6 +1,6 @@
-import React, {forwardRef, ReactNode} from 'react'
+import React, {forwardRef, type ReactNode} from 'react'
 import {View} from 'react-native'
-import {Modalize, ModalizeProps} from 'react-native-modalize'
+import {Modalize, type ModalizeProps} from 'react-native-modalize'
 import {Portal} from 'react-native-portalize'
 import {DIMENSION} from 'src/commons/dimension'
 

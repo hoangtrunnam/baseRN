@@ -1,9 +1,9 @@
 export const TransferPercents = (number_one: number = 0, number_two: number = 100): string => {
   if (number_two === 0) {
-    return '0.00%'.replaceAll('.', ',')
+    return '0.00%'.replace('.', ',')
   }
   const percent = Math.round(number_one * 100) / number_two
-  return `${percent.toFixed(2)}%`.replaceAll('.', ',')
+  return `${percent.toFixed(2)}%`.replace('.', ',')
 }
 
 export const formatPhoneNumber = (phoneNumberString: string | number): string => {

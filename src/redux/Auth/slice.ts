@@ -1,4 +1,4 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit'
+import {createSlice, type PayloadAction} from '@reduxjs/toolkit'
 import {routes} from 'src/navigation/routes'
 import type {RootState} from '../store'
 import type {AuthState} from './types'

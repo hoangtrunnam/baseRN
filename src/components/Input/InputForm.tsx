@@ -3,9 +3,9 @@ import React, {useCallback, useImperativeHandle, useMemo, useRef, useState} from
 import {
   StyleSheet,
   TextInput,
-  TextInputProps,
+  type TextInputProps,
   View,
-  ViewStyle,
+  type ViewStyle,
   Text,
   TouchableWithoutFeedback,
 } from 'react-native'

@@ -6,7 +6,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
-  TextStyle,
+  type TextStyle,
   TouchableWithoutFeedback,
   View,
 } from 'react-native'

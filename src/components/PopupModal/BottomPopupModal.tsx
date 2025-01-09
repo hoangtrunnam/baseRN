@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable react-native/no-inline-styles */
-import React, {forwardRef, ReactNode, useState} from 'react'
+import React, {forwardRef, type ReactNode, useState} from 'react'
 import {
-  DimensionValue,
+  type DimensionValue,
   KeyboardAvoidingView,
   Modal,
   Platform,

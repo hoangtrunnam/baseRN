@@ -1,6 +1,6 @@
 import {Platform} from 'react-native'
-import {check, PERMISSIONS, Rationale, RESULTS} from 'react-native-permissions'
-import {IReturnRequestPermission, requestPermission} from './permissionUtil'
+import {check, PERMISSIONS, type Rationale, RESULTS} from 'react-native-permissions'
+import {type IReturnRequestPermission, requestPermission} from './permissionUtil'
 
 export const permisstionCamera = Platform.select({
   ios: PERMISSIONS.IOS.CAMERA,
