@@ -76,7 +76,7 @@ export const showMessage = (
     | 'partnerCartSuccess',
   bottom?: number,
   onPress?: () => void,
-  time?: number
+  time?: number,
 ) => {
   Toast.show({
     position: 'bottom',
@@ -92,7 +92,6 @@ export const showMessage = (
 export const copyText = (text: string) => {
   Clipboard.setString(text)
 }
-
 
 /** func get file name from path */
 export const getFileName = (path: string) => {
@@ -125,7 +124,7 @@ function extractFileName(url: string) {
 export const saveImageWithExistedPath = async (
   uri: string,
   type: 'uri' | 'base64' | 'video',
-  explore?: boolean
+  explore?: boolean,
 ) => {
   let result = ''
   const {fs} = ReactNativeBlobUtil
