@@ -184,3 +184,4 @@ yarn ios
 - node >= 18
 - java >= 17
 - build android bằng lệnh, android studio đang gặp lỗi không xác định
+- build apk với dev, staging, prod. thì chỉ cần gen file keystore. thay đổi tên và pass cho phù hợp trong file gradle.properties
