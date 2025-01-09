@@ -1089,7 +1089,7 @@ PODS:
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-  - RNDeviceInfo (10.11.0):
+  - RNDeviceInfo (14.0.2):
     - React-Core
   - RNFastImage (8.6.3):
     - React-Core
@@ -1423,7 +1423,7 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: cc6479c4acd84cc7004946946c8afe30b018184d
   RNCClipboard: 88f7f4933e7731052210d77535560c485ecb75b0
   RNCMaskedView: 1611be41c9f78f5ecbcff2360b0891593c1c0ce1
-  RNDeviceInfo: bf8a32acbcb875f568217285d1793b0e8588c974
+  RNDeviceInfo: 3f2e5fcca3637f75c6d30ba287293c2f97206781
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
   RNGestureHandler: f5160496947abe7f1351d39887cc99bbf5e72507
   RNKeychain: a65256b6ca6ba6976132cc4124b238a5b13b3d9c
