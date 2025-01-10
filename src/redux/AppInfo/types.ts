@@ -12,6 +12,7 @@ export interface AppInfoType {
   userInfo: InvestorInfo
   timeSendEmail: number
   isSuggestCredentials: boolean
+  isEnableDebugger: boolean
 }
 
 export const app_info_types = {

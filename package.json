@@ -50,6 +50,7 @@
     "react-native-linear-gradient": "^2.8.3",
     "react-native-localize": "3.3.0",
     "react-native-modalize": "^2.1.1",
+    "react-native-network-logger": "^1.17.0",
     "react-native-pager-view": "^6.6.1",
     "react-native-permissions": "^5.2.2",
     "react-native-portalize": "^1.0.7",

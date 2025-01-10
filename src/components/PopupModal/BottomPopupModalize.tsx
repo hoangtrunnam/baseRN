@@ -8,15 +8,16 @@ interface IBottomPopupModalizeProps {
   children: ReactNode
   modalizeProps: ModalizeProps
   modalHeight?: number
+  adjustToContentHeight?: boolean
 }
 
 const BottomPopupModalize = forwardRef<any, IBottomPopupModalizeProps>(
   (props: IBottomPopupModalizeProps, ref) => {
-    const {children, modalizeProps, modalHeight = DIMENSION.height - 60} = props
+    const {children, modalizeProps, modalHeight = DIMENSION.height - 100, adjustToContentHeight = false} = props
     return (
       <Portal>
         <Modalize
-          adjustToContentHeight
+          adjustToContentHeight={adjustToContentHeight}
           childrenStyle={{height: modalHeight}}
           ref={ref}
           {...modalizeProps}>

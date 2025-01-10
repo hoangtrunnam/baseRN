@@ -19,6 +19,7 @@ const initialState: AppInfoType = {
   },
   timeSendEmail: 0,
   isSuggestCredentials: true,
+  isEnableDebugger: false
 }
 
 export const appInfoSlice = createSlice({
@@ -52,6 +53,10 @@ export const appInfoSlice = createSlice({
     setSuggestCredentials: (state, action: PayloadAction<boolean>) => {
       state.isSuggestCredentials = action.payload
     },
+    setEnableDebugger: (state, action: PayloadAction<boolean>) => {
+      state.isEnableDebugger = action.payload
+    
+    }
   },
 })
 
@@ -64,6 +69,7 @@ export const {
   resetInvestorInfo,
   setTimeSendEmail,
   setSuggestCredentials,
+  setEnableDebugger
 } = appInfoSlice.actions
 
 export const selectAppInfo = (state: RootState) => state.appInfoReducer

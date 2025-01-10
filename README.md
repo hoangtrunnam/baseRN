@@ -184,3 +184,4 @@ yarn ios
 - node >= 18
 - java >= 17
 - build apk với dev, staging, prod. thì chỉ cần gen file keystore. thay đổi tên và pass cho phù hợp trong file gradle.properties
+- để bật network logger: giữ button login trong 5s
