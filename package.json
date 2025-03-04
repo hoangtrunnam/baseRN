@@ -18,8 +18,9 @@
     "checklint": "yarn lint && yarn type",
     "lint:fix": "eslint --quiet \"**/*.{js,ts,tsx}\" --fix",
     "podinstall": "cd ios && pod install && cd ..",
-    "pushios": "yarn hot-updater deploy -p ios -t 1.0.0 -f",
-    "pushandroid": "yarn hot-updater deploy -p android -t 1.0.0 -f"
+    "pushios": "yarn hot-updater deploy -p ios -t 1.0.1 -f",
+    "pushandroid": "yarn hot-updater deploy -p android -t 1.0.1 -f",
+    "openhotupdate": "yarn hot-updater console"
   },
   "dependencies": {
     "@alessiocancian/react-native-actionsheet": "^3.2.0",
