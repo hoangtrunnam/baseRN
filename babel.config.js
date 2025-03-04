@@ -20,5 +20,6 @@ module.exports = {
       },
     ],
     'react-native-reanimated/plugin',
+    'hot-updater/babel-plugin',
   ],
 }

@@ -1,12 +1,9 @@
 // file này hỗ trợ xử lý navigaiton ngoài màn hình
 
-// import React from 'react'
 import {CommonActions, createNavigationContainerRef} from '@react-navigation/native'
-import type {StackScreenProps} from '@react-navigation/stack/lib/typescript/src/types'
 import {routes as routesApp} from './routes'
 import type {RoutesType} from './types'
-
-// export const refNavigation = React.createRef<any>()
+import type { StackScreenProps } from '@react-navigation/stack'
 export const refNavigation = createNavigationContainerRef<RoutesType>()
 /**
  * func lấy ra thông tin màn hình trước khi đi vào màn hình đăng nhập

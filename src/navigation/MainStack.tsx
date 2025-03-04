@@ -10,6 +10,7 @@ import Login from 'src/features/TestApp/Login'
 import Notifications from 'src/features/TestApp/Notifications'
 import UserProfile from 'src/features/TestApp/UserProfile'
 import DetailCalender from 'src/features/TestApp/DetailCalender'
+import ConfirmMail from 'src/features/TestApp/ConfirmMail'
 const Stack = createStackNavigator<MainNavigationParamList>()
 
 const MainStack: React.FC<any> = () => {
@@ -23,7 +24,7 @@ const MainStack: React.FC<any> = () => {
         },
         ...transitionPresets,
       }}
-      initialRouteName={routes.Login}>
+      initialRouteName={routes.ConfirmMail}>
       <Stack.Screen
         name={routes.BottomTab}
         component={BottomTabFinal}
@@ -35,6 +36,7 @@ const MainStack: React.FC<any> = () => {
       <Stack.Screen name={routes.Home} component={Home} />
       <Stack.Screen name={routes.UserProfile} component={UserProfile} />
       <Stack.Screen name={routes.DetailCalender} component={DetailCalender} />
+      <Stack.Screen name={routes.ConfirmMail} component={ConfirmMail} />
     </Stack.Navigator>
   )
 }

@@ -17,7 +17,7 @@ export const checkAndRequestCameraPermission: (
   const result = await check(permisstionCamera)
   switch (result) {
     case RESULTS.DENIED: {
-      return requestPermission(permisstionCamera, rationale)
+      return requestPermission(permisstionCamera, rationale as any)
     }
 
     default:
@@ -40,7 +40,7 @@ export const checkAndRequestLibraryPermission: (
   const result = await check(permisstionLibrary)
   switch (result) {
     case RESULTS.DENIED: {
-      return requestPermission(permisstionLibrary, rationale)
+      return requestPermission(permisstionLibrary, rationale as any)
     }
 
     default:

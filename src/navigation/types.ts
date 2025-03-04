@@ -1,5 +1,8 @@
 import type {BottomTabScreenProps} from '@react-navigation/bottom-tabs'
-import type {CompositeScreenProps, NavigatorScreenParams} from '@react-navigation/native'
+import type {
+  CompositeScreenProps,
+  NavigatorScreenParams,
+} from '@react-navigation/native'
 import type {StackScreenProps} from '@react-navigation/stack'
 
 export type BottomTabNavigationParamList = {
@@ -19,21 +22,24 @@ export type MainNavigationParamList = {
   SignUp: undefined
   Gift: undefined
   Home: undefined
-  Login: undefined
+  Login: {value: number}
   UserProfile: undefined
   DetailCalender: undefined
+  ConfirmMail: {value: number}
 }
 
 export type RoutesType = BottomTabNavigationParamList & MainNavigationParamList
 
-export type BottomScreenNavigationProps<T extends keyof BottomTabNavigationParamList> =
-  CompositeScreenProps<
-    BottomTabScreenProps<BottomTabNavigationParamList, T>,
-    MainStackScreenNavigationProps<keyof MainNavigationParamList>
-  >
+export type BottomScreenNavigationProps<
+  T extends keyof BottomTabNavigationParamList,
+> = CompositeScreenProps<
+  BottomTabScreenProps<BottomTabNavigationParamList, T>,
+  MainStackScreenNavigationProps<keyof MainNavigationParamList>
+>
 
-export type MainStackScreenNavigationProps<T extends keyof MainNavigationParamList> =
-  StackScreenProps<MainNavigationParamList, T>
+export type MainStackScreenNavigationProps<
+  T extends keyof MainNavigationParamList,
+> = StackScreenProps<MainNavigationParamList, T>
 
 declare global {
   namespace ReactNavigation {
