@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native'
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {routes} from 'src/navigation/routes'
 import type {MainStackScreenNavigationProps} from 'src/navigation/types'
@@ -13,25 +13,48 @@ import LoadingPortal from 'src/components/Loading/LoadingPortal'
 import {Thumb} from 'src/components/Image'
 import {setEnableDebugger} from 'src/redux/AppInfo/slice'
 import {useAppSelector} from 'src/redux/hooks'
+import CodePush, { type LocalPackage } from 'react-native-code-push'
+import DeviceInfo from 'react-native-device-info'
 
 interface ILogin extends MainStackScreenNavigationProps<'Login'> {}
 
 const Login = ({navigation}: ILogin) => {
   const dispatch = useDispatch()
   const {isEnableDebugger} = useAppSelector(state => state.appInfoReducer)
+  const readableVersion = DeviceInfo.getReadableVersion();
+  const [infoApp, setInfoApp] = useState<LocalPackage | null>()
 
   const handleGetApiTest = async () => {
-    const res = await testGetUser()
+    const res = true
     if (res) {
       console.log('hhahaaha', res)
     }
   }
 
+  // useEffect(() => {
+  //   // LoadingPortal.show()
+  //   // handleGetApiTest()
+  //   // LoadingPortal.hide()
+  // }, [dispatch])
+
   useEffect(() => {
-    LoadingPortal.show()
-    handleGetApiTest()
-    LoadingPortal.hide()
-  }, [dispatch])
+    CodePush.getUpdateMetadata(CodePush.UpdateState.RUNNING)
+      .then(metadata => {
+        if (metadata) {
+          console.log('Running update metadata:', metadata);
+          setInfoApp(metadata)
+          // metadata.label, metadata.packageHash, metadata.appVersion, ...
+        } else {
+          console.log('No CodePush update installed.');
+        }
+      })
+      .catch(error => {
+        console.log('Error fetching update metadata:', error);
+      });
+  }, []);
+
+
+
 
   return (
     <>
@@ -39,11 +62,14 @@ const Login = ({navigation}: ILogin) => {
       <View testID="welcome" style={styles.container}>
         <Wallet width={24} height={24} />
         <Thumb
-          source={IMAGES.globalImage}
+          source={IMAGES.banner}
           style={styles.image}
           resizeMode="cover"
         />
-        <Text>Login screen</Text>
+        <Text>version from device info: {readableVersion}</Text>
+        <Text>version from codepush info: {infoApp?.appVersion}</Text>
+        <Text>init app</Text>
+        <Text>this is v1</Text>
         <View style={{borderRadius: 16}}>
           <TouchableOpacity
             style={styles.btnLogin}

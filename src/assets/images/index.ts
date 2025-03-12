@@ -4,4 +4,5 @@ export const IMAGES = {
   avatarDefault: require('./AvatarDefault.png'),
   wifiAlert: require('./WifiAlert.png'),
   bugs: require('./bugs.png'),
+  banner: require('./banner.png')
 }

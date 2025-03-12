@@ -14,6 +14,7 @@ import NetworkComponent, {
 } from 'src/components/NetworkComponent'
 import ToastMessage from './components/ToastMessage'
 import Navigator from './navigation'
+import CodePushDialog from './components/CodePushDialog'
 
 /** khai báo và tạo thêm prototype translate cho string
  * sử dụng cho i18n ở func common, func ngoài component
@@ -47,6 +48,7 @@ const AppContent = () => {
           <Toast config={toastConfig} visibilityTime={1500} />
           {isEnableDebugger && <CircleBubble onPress={handleBubblePress} />}
           <NetworkComponent ref={networkRef} />
+          <CodePushDialog />
         </SafeAreaProvider>
       </Host>
     </AppProvider>

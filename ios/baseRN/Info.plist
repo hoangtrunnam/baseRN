@@ -22,14 +22,28 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>IOS_APP_BUILD_CODE</string>
+	<key>CodePushDeploymentKey</key>
+	<string>CODEPUSH_IOS_DEVELOPMENT_KEY</string>
+	<key>CodePushServerURL</key>
+	<string>CODEPUSH_SERVER_URL</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
-		<false/>
-		<key>NSAllowsLocalNetworking</key>
-		<true/>
+    <true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>codepushnh.click</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+        <false/>
+			</dict>
+		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>

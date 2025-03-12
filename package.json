@@ -17,7 +17,11 @@
     "lint": "eslint --quiet \"**/*.{js,ts,tsx}\"",
     "checklint": "yarn lint && yarn type",
     "lint:fix": "eslint --quiet \"**/*.{js,ts,tsx}\" --fix",
-    "podinstall": "cd ios && pod install && cd .."
+    "podinstall": "cd ios && pod install && cd ..",
+    "build:ios": "npx react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ./code-push/main.jsbundle --assets-dest ./code-push",
+    "public:ios": "code-push release basern-IOS ./code-push 1.0.0 --bundle-name main.jsbundle && rm -rf ./code-push/*",
+    "build:android": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output ./code-push/index.android.bundle --assets-dest ./code-push",
+    "public:android": "code-push release basern-Android ./code-push 1.0.0 --bundle-name index.android.bundle && rm -rf ./code-push/*"
   },
   "dependencies": {
     "@alessiocancian/react-native-actionsheet": "^3.2.0",
@@ -87,7 +91,9 @@
     "husky": "^8.0.0",
     "jest": "^29.6.3",
     "prettier": "^2.8.8",
+    "react-native-code-push": "^9.0.1",
     "react-test-renderer": "18.3.1",
+    "reactotron-react-native": "^5.1.12",
     "typescript": "5.0.4"
   },
   "engines": {
