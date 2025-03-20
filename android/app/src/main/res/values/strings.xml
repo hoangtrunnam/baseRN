@@ -1,5 +1,5 @@
 <resources>
 <string name="app_name">basern</string>
-<string moduleConfig="true" name="CodePushDeploymentKey">CDilWdTPJIKnJ4aATOvpSX2MUTJX4ksvOXqog</string>  
+<string moduleConfig="true" name="CodePushDeploymentKey">xgFN2qJwDBAE0pqFDPlK6nLxLgPv4ksvOXqog</string>  
 <string moduleConfig="true" name="CodePushServerUrl">http://codepushnh.click</string>
 </resources>

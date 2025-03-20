@@ -69,7 +69,7 @@ const Login = ({navigation}: ILogin) => {
         <Text>version from device info: {readableVersion}</Text>
         <Text>version from codepush info: {infoApp?.appVersion}</Text>
         <Text>init app</Text>
-        <Text>this is v1</Text>
+        <Text>this app is v1 with new feature</Text>
         <View style={{borderRadius: 16}}>
           <TouchableOpacity
             style={styles.btnLogin}

@@ -18,10 +18,8 @@
     "checklint": "yarn lint && yarn type",
     "lint:fix": "eslint --quiet \"**/*.{js,ts,tsx}\" --fix",
     "podinstall": "cd ios && pod install && cd ..",
-    "build:ios": "npx react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ./code-push/main.jsbundle --assets-dest ./code-push",
-    "public:ios": "code-push release basern-IOS ./code-push 1.0.0 --bundle-name main.jsbundle && rm -rf ./code-push/*",
-    "build:android": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output ./code-push/index.android.bundle --assets-dest ./code-push",
-    "public:android": "code-push release basern-Android ./code-push 1.0.0 --bundle-name index.android.bundle && rm -rf ./code-push/*"
+    "release:codepush": "bash ./release-scripts/release-codepush.sh",
+    "build:codepush": "bash ./release-scripts/build-codepush.sh"
   },
   "dependencies": {
     "@alessiocancian/react-native-actionsheet": "^3.2.0",
