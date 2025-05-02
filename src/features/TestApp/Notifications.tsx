@@ -9,29 +9,84 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   type LayoutChangeEvent,
-  type LayoutRectangle,
-  type GestureResponderEvent,
-  type NativeSyntheticEvent,
-  type NativePointerEvent,
   Animated,
 } from 'react-native'
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {
   TabView,
-  SceneMap,
   type SceneRendererProps,
   type NavigationState,
   TabBar,
   type TabBarItemProps,
   type TabBarIndicatorProps,
 } from 'react-native-tab-view'
-import ListHeaderTabs from './ListHeaderTabs'
 import { useLocale } from '@react-navigation/native'
 
 const INDICATOR_WIDTH = 161
 
 type State = NavigationState<{key: string; title: string}>
 export type Route = {key: string; title: string}
+
+type IndicatorProps = TabBarIndicatorProps<Route> & {
+  routes: Route[];
+};
+
+const RenderIndicator = (props: IndicatorProps) => {
+  const { position, getTabWidth, gap, width, style, routes } = props;
+  const { direction } = useLocale();
+
+  console.log('hahahahah: ', getTabWidth(1))
+  
+  // Tạo inputRange đều hơn với nhiều điểm hơn
+  const inputRange = [];
+  const outputRange = [];
+  
+  // Tạo một loạt các điểm từ 0 đến số lượng tab
+  for (let i = 0; i < routes.length; i++) {
+    // Thêm nhiều điểm hơn cho mỗi tab để animation mượt hơn
+    if (i > 0) {
+      // Thêm các điểm giữa các tab
+      inputRange.push(i - 0.7, i - 0.5, i - 0.3, i - 0.1);
+      
+      // Tính toán vị trí tương ứng cho mỗi điểm
+      const prevTabWidth = getTabWidth(i - 1);
+      const currentTabWidth = getTabWidth(i);
+      const prevPosition = (i - 1) * prevTabWidth + (i - 1) * (gap ?? 0);
+      const currentPosition = i * currentTabWidth + i * (gap ?? 0);
+      
+      // Tính toán vị trí trung gian
+      outputRange.push(
+        prevPosition + (currentPosition - prevPosition) * 0.3,
+        prevPosition + (currentPosition - prevPosition) * 0.5,
+        prevPosition + (currentPosition - prevPosition) * 0.7,
+        prevPosition + (currentPosition - prevPosition) * 0.9
+      );
+    }
+    
+    // Thêm điểm chính
+    inputRange.push(i);
+    outputRange.push(i * getTabWidth(i) + i * (gap ?? 0));
+  }
+
+  const translateX = position.interpolate({
+    inputRange,
+    outputRange: direction === 'rtl' ? outputRange.map(x => -x) : outputRange,
+  });
+
+  return (
+    <Animated.View
+      style={[
+        style,
+        styles.container,
+        { width, transform: [{ translateX }] },
+      ]}
+    >
+      <Animated.View
+        style={[styles.indicator]}
+      />
+    </Animated.View>
+  );
+};
 
 const Notifications = () => {
   const layout = useWindowDimensions()
@@ -41,15 +96,8 @@ const Notifications = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [widthItemTabbar, setWidthItemTabbar] = useState<number>(0)
 
-  const [state, setState] = useState<{data: Route[]; tabSelected: Route}>({
-    data: [],
-    tabSelected: {
-      key: 'first',
-      title: 'First hoang trung nam hy',
-    },
-  })
+ 
 
-  const refTabBar = useRef<any>(null)
 
   const renderScene = (
     props: SceneRendererProps & {
@@ -87,62 +135,7 @@ const Notifications = () => {
     return () => clearTimeout(timer)
   }, [])
 
-  const renderIndicator = (props: TabBarIndicatorProps<Route>) => {
-    const { position, getTabWidth, gap, width, style } = props;
-    const { direction } = useLocale();
-
-    console.log('hahahahah: ', getTabWidth(1))
-    
-    // Tạo inputRange đều hơn với nhiều điểm hơn
-    const inputRange = [];
-    const outputRange = [];
-    
-    // Tạo một loạt các điểm từ 0 đến số lượng tab
-    for (let i = 0; i < routes.length; i++) {
-      // Thêm nhiều điểm hơn cho mỗi tab để animation mượt hơn
-      if (i > 0) {
-        // Thêm các điểm giữa các tab
-        inputRange.push(i - 0.7, i - 0.5, i - 0.3, i - 0.1);
-        
-        // Tính toán vị trí tương ứng cho mỗi điểm
-        const prevTabWidth = getTabWidth(i - 1);
-        const currentTabWidth = getTabWidth(i);
-        const prevPosition = (i - 1) * prevTabWidth + (i - 1) * (gap ?? 0);
-        const currentPosition = i * currentTabWidth + i * (gap ?? 0);
-        
-        // Tính toán vị trí trung gian
-        outputRange.push(
-          prevPosition + (currentPosition - prevPosition) * 0.3,
-          prevPosition + (currentPosition - prevPosition) * 0.5,
-          prevPosition + (currentPosition - prevPosition) * 0.7,
-          prevPosition + (currentPosition - prevPosition) * 0.9
-        );
-      }
-      
-      // Thêm điểm chính
-      inputRange.push(i);
-      outputRange.push(i * getTabWidth(i) + i * (gap ?? 0));
-    }
   
-    const translateX = position.interpolate({
-      inputRange,
-      outputRange: direction === 'rtl' ? outputRange.map(x => -x) : outputRange,
-    });
-  
-    return (
-      <Animated.View
-        style={[
-          style,
-          styles.container,
-          { width, transform: [{ translateX }] },
-        ]}
-      >
-        <Animated.View
-          style={[styles.indicator]}
-        />
-      </Animated.View>
-    );
-  };
 
   const renderTabBar = (
     props: SceneRendererProps & {navigationState: State},
@@ -182,7 +175,7 @@ const Notifications = () => {
         //   width: 'auto',
         //   // backgroundColor: 'red',
         // }}
-        renderIndicator={renderIndicator}
+        renderIndicator={e => <RenderIndicator {...e} routes={routes} />}
         // gap={20}
         renderTabBarItem={(
           item: TabBarItemProps<{key: string; title: string}>,
@@ -226,41 +219,19 @@ const Notifications = () => {
     )
   }
 
-  const onChangeTab = (tab: any) => {
-    setState(s => ({...s, tabSelected: tab}))
-  }
-
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={{flex: 1, width: '100%', backgroundColor: '#fff'}}>
-        {/* <ListHeaderTabs
-          ref={refTabBar}
-          onChangeTab={onChangeTab}
-          tabSelected={state.tabSelected}
-          data={routes || state.data}
-        /> */}
         {!isLoading && (
           <TabView
             style={{flex: 1, width: '100%', backgroundColor: '#fff'}}
             navigationState={{index, routes: routes}}
-            // key={`tab-${index}`}
             renderScene={renderScene}
             renderTabBar={renderTabBar}
-            // renderTabBar={() => null}
             onIndexChange={setIndex}
             swipeEnabled={true}
             initialLayout={{width: Dimensions.get('window').width}}
-            onResponderMove={(event: GestureResponderEvent) => {
-              console.log('==============', event)
-            }}
-            onTouchMove={(event: GestureResponderEvent) => {
-              console.log('==============', event)
-            }}
-            onPointerMove={(
-              event: NativeSyntheticEvent<NativePointerEvent>,
-            ) => {
-              console.log('==============', event)
-            }}
+            
           />
         )}
       </View>
